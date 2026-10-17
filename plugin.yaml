@@ -1,0 +1,8 @@
+name: session-awareness
+version: 0.1.0
+description: "Make each local Hermes session aware of the other live sessions on this machine: a one-shot announcement of peers on the first tool result, plus a heads-up nudge after a delete/move terminal call. Read-only sqlite, never blocks, never raises."
+author: adam.durham
+kind: standalone
+provides_hooks:
+  - transform_tool_result
+  - on_session_end
