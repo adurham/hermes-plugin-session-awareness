@@ -208,7 +208,7 @@ class TestAcceptance(SessionAwarenessCase):
 
     # ── 4 ─────────────────────────────────────────────────────────────────────
     def test_04_b3_nudge_on_delete_move_only(self):
-        self._write_registry([self.live_peer(name="Other project session")])
+        self._write_registry([self.live_peer(name="Other session")])
         first = self.hook(**_kwargs())                               # first result: B1 announcement
         self.assertIsInstance(first, str)
         self.assertIn(B1_HEADER, first)
@@ -216,7 +216,7 @@ class TestAcceptance(SessionAwarenessCase):
         self.assertIsInstance(out, str)
         self.assertTrue(out.startswith(ORIGINAL))
         self.assertIn(B3_MARK, out)
-        self.assertIn("Other project session", out)
+        self.assertIn("Other session", out)
         self.assertIn("1 other Hermes session is live on this machine", out)
 
         self.assertIsNone(self.hook(**_kwargs(tool_name="terminal", command="ls /x")))
